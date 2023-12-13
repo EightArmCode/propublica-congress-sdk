@@ -29,7 +29,7 @@ declare module '../api' {
   }
 }
 
-CongressAPI.prototype.getAllCommittees = async function(params: CongressNumberParams) {
+CongressAPI.prototype.getAllCommittees = async function (params: CongressNumberParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -39,7 +39,7 @@ CongressAPI.prototype.getAllCommittees = async function(params: CongressNumberPa
   return response.data as CommitteeListResult;
 };
 
-CongressAPI.prototype.getCommittee = async function(params: CommitteeParams) {
+CongressAPI.prototype.getCommittee = async function (params: CommitteeParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -49,7 +49,7 @@ CongressAPI.prototype.getCommittee = async function(params: CommitteeParams) {
   return response.data as SingleCommitteeResult;
 };
 
-CongressAPI.prototype.getRecentHearings = async function(params: CongressNumberParams) {
+CongressAPI.prototype.getRecentHearings = async function (params: CongressNumberParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -59,7 +59,9 @@ CongressAPI.prototype.getRecentHearings = async function(params: CongressNumberP
   return response.data as CommitteeHearingListResult;
 };
 
-CongressAPI.prototype.getCommitteeHearings = async function(params: CommitteeParams) {
+CongressAPI.prototype.getCommitteeHearings = async function (
+  params: CommitteeParams,
+): Promise<CommitteeHearingListResult> {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -69,7 +71,9 @@ CongressAPI.prototype.getCommitteeHearings = async function(params: CommitteePar
   return response.data as CommitteeHearingListResult;
 };
 
-CongressAPI.prototype.getSubcommittee = async function(params: SubcommitteeParams) {
+CongressAPI.prototype.getSubcommittee = async function (
+  params: SubcommitteeParams,
+): Promise<SingleSubcommitteeResult> {
   params = this.withDefaults(params);
 
   const response = await this.request({

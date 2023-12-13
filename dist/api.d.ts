@@ -6,7 +6,7 @@ export declare class CongressAPI {
     constructor(options: APIOptions);
     private getApi;
     request(requestParams: RequestParams): Promise<any>;
-    readonly congressNumber: number;
+    get congressNumber(): number;
     withDefaults(params: any): any;
 }
 interface APIOptions {

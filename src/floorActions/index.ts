@@ -17,7 +17,7 @@ declare module '../api' {
   }
 }
 
-CongressAPI.prototype.getRecentFloorActions = async function(params: ChamberRequestParams) {
+CongressAPI.prototype.getRecentFloorActions = async function (params: ChamberRequestParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -27,7 +27,7 @@ CongressAPI.prototype.getRecentFloorActions = async function(params: ChamberRequ
   return response.data as FloorActionListResult;
 };
 
-CongressAPI.prototype.getFloorActionsForDate = async function(params: FloorActionsDateParams) {
+CongressAPI.prototype.getFloorActionsForDate = async function (params: FloorActionsDateParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({

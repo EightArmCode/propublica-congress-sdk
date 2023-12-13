@@ -41,8 +41,8 @@ declare module '../api' {
   }
 }
 
-CongressAPI.prototype.getNominationVotes = async function(
-  params: NominationParams
+CongressAPI.prototype.getNominationVotes = async function (
+  params: NominationParams,
 ): Promise<NominationVotesResult> {
   params = this.withDefaults(params);
 
@@ -53,8 +53,8 @@ CongressAPI.prototype.getNominationVotes = async function(
   return response.data as NominationVotesResult;
 };
 
-CongressAPI.prototype.getRecentVotes = async function(
-  params: ChamberRequestParams
+CongressAPI.prototype.getRecentVotes = async function (
+  params: ChamberRequestParams,
 ): Promise<VoteListResult> {
   params = this.withDefaults(params);
 
@@ -65,8 +65,8 @@ CongressAPI.prototype.getRecentVotes = async function(
   return response.data as VoteListResult;
 };
 
-CongressAPI.prototype.getRollCallVote = async function(
-  params: RollCallVoteParams
+CongressAPI.prototype.getRollCallVote = async function (
+  params: RollCallVoteParams,
 ): Promise<SingleVoteResult> {
   params = this.withDefaults(params);
 
@@ -78,8 +78,8 @@ CongressAPI.prototype.getRollCallVote = async function(
   return response.data as SingleVoteResult;
 };
 
-CongressAPI.prototype.getVotesForDateRange = async function(
-  params: DateRangeParams
+CongressAPI.prototype.getVotesForDateRange = async function (
+  params: DateRangeParams,
 ): Promise<VoteListResult> {
   params = this.withDefaults(params);
 
@@ -93,8 +93,8 @@ CongressAPI.prototype.getVotesForDateRange = async function(
   return response.data as VoteListResult;
 };
 
-CongressAPI.prototype.getVotesForDate = async function(
-  params: DateParams
+CongressAPI.prototype.getVotesForDate = async function (
+  params: DateParams,
 ): Promise<VoteListResult> {
   params = this.withDefaults(params);
   const dateString = getDateString(params.date);
@@ -106,8 +106,8 @@ CongressAPI.prototype.getVotesForDate = async function(
   return response.data as VoteListResult;
 };
 
-CongressAPI.prototype.getVotesForType = async function(
-  params: VoteTypeParams
+CongressAPI.prototype.getVotesForType = async function (
+  params: VoteTypeParams,
 ): Promise<VoteListResult> {
   params = this.withDefaults(params);
 
