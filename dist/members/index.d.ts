@@ -10,6 +10,9 @@ interface MembersForStateParams extends ChamberRequestParams {
     state: string;
     district?: string;
 }
+/**
+ * Parameters for retrieving leaving members of Congress.
+ */
 interface LeavingMembersParams extends ChamberRequestParams {
     congressNumber?: number;
 }

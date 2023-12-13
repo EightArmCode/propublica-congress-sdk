@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CongressAPI = void 0;
 var axios_1 = __importDefault(require("axios"));
 var CongressAPI = /** @class */ (function () {
     function CongressAPI(options) {
@@ -42,7 +43,7 @@ var CongressAPI = /** @class */ (function () {
         get: function () {
             return this._congressNumber;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     CongressAPI.prototype.withDefaults = function (params) {

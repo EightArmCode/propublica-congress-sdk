@@ -25,6 +25,9 @@ interface MembersForStateParams extends ChamberRequestParams {
   district?: string;
 }
 
+/**
+ * Parameters for retrieving leaving members of Congress.
+ */
 interface LeavingMembersParams extends ChamberRequestParams {
   congressNumber?: number;
 }
@@ -53,7 +56,7 @@ declare module '../api' {
   }
 }
 
-CongressAPI.prototype.getAllMembers = async function(params: AllMembersParams) {
+CongressAPI.prototype.getAllMembers = async function (params: AllMembersParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -63,7 +66,7 @@ CongressAPI.prototype.getAllMembers = async function(params: AllMembersParams) {
   return response.data as MemberListResult;
 };
 
-CongressAPI.prototype.getMember = async function(params: MemberIdParams) {
+CongressAPI.prototype.getMember = async function (params: MemberIdParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -73,7 +76,7 @@ CongressAPI.prototype.getMember = async function(params: MemberIdParams) {
   return response.data as SingleMemberResult;
 };
 
-CongressAPI.prototype.getNewMembers = async function(params: BaseRequestParams) {
+CongressAPI.prototype.getNewMembers = async function (params: BaseRequestParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -83,7 +86,7 @@ CongressAPI.prototype.getNewMembers = async function(params: BaseRequestParams) 
   return response.data as NewMemberListResult;
 };
 
-CongressAPI.prototype.getMembersForState = async function(params: MembersForStateParams) {
+CongressAPI.prototype.getMembersForState = async function (params: MembersForStateParams) {
   params = this.withDefaults(params);
 
   let url = `/members/${params.chamber}/${params.state}/current`;
@@ -95,7 +98,7 @@ CongressAPI.prototype.getMembersForState = async function(params: MembersForStat
   return response.data as CurrentMemberListResult;
 };
 
-CongressAPI.prototype.getLeavingMembers = async function(params: LeavingMembersParams) {
+CongressAPI.prototype.getLeavingMembers = async function (params: LeavingMembersParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -105,7 +108,7 @@ CongressAPI.prototype.getLeavingMembers = async function(params: LeavingMembersP
   return response.data as LeavingMemberListResult;
 };
 
-CongressAPI.prototype.getMemberVotePositions = async function(params: MemberIdParams) {
+CongressAPI.prototype.getMemberVotePositions = async function (params: MemberIdParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -115,7 +118,7 @@ CongressAPI.prototype.getMemberVotePositions = async function(params: MemberIdPa
   return response.data as MemberVotesResult;
 };
 
-CongressAPI.prototype.getMemberVoteComparison = async function(params: TwoMemberParams) {
+CongressAPI.prototype.getMemberVoteComparison = async function (params: TwoMemberParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -125,7 +128,7 @@ CongressAPI.prototype.getMemberVoteComparison = async function(params: TwoMember
   return response.data as MemberVoteComparisonResult;
 };
 
-CongressAPI.prototype.getMemberSponsorshipsComparison = async function(params: TwoMemberParams) {
+CongressAPI.prototype.getMemberSponsorshipsComparison = async function (params: TwoMemberParams) {
   params = this.withDefaults(params);
 
   const response = await this.request({
@@ -135,8 +138,8 @@ CongressAPI.prototype.getMemberSponsorshipsComparison = async function(params: T
   return response.data as MemberBillComparisonResult;
 };
 
-CongressAPI.prototype.getCosponsoredBillsForMember = async function(
-  params: CosponsoredBillsParams
+CongressAPI.prototype.getCosponsoredBillsForMember = async function (
+  params: CosponsoredBillsParams,
 ) {
   params = this.withDefaults(params);
 
