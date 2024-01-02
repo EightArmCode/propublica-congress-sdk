@@ -14,33 +14,33 @@ interface SharedMember {
     state_rank: string;
     office: string;
     phone: string;
-    fax: string;
+    fax: string | null;
     contact_form: URLString;
     missed_votes_pct: number;
     votes_with_party_pct: number;
 }
 interface MemberName {
     first_name: string;
-    middle_name: string;
+    middle_name: string | null;
     last_name: string;
-    suffix: string;
+    suffix: string | null;
 }
 export interface Member extends SharedMember, MemberName {
     id: MemberId;
     api_uri: URLString;
     date_of_birth: string;
     gender: 'M' | 'F';
-    twitter_account: string;
-    facebook_account: string;
-    youtube_account: string;
+    twitter_account: string | null;
+    facebook_account: string | null;
+    youtube_account: string | null;
     govtrack_id: string;
-    cspan_id: string;
-    votesmart_id: string;
+    cspan_id: string | null;
+    votesmart_id: string | null;
     icpsr_id: string;
-    crp_id: string;
+    crp_id: string | null;
     google_entity_id: string;
     url: URLString;
-    rss_url: URLString;
+    rss_url: URLString | null;
     in_office: boolean;
     dw_nominate: number;
     ideal_point: any;
