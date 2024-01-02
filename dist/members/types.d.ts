@@ -1,5 +1,5 @@
 import { BaseApiResult, CapitalizedChamber, URLString } from '../types';
-export declare type MemberId = string;
+export type MemberId = string;
 interface SharedMember {
     title: string;
     short_title: string;

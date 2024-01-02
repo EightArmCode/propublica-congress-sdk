@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -45,7 +45,7 @@ api_1.CongressAPI.prototype.getAllMembers = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/" + this.congressNumber + "/" + params.chamber + "/members",
+                            url: "/".concat(this.congressNumber, "/").concat(params.chamber, "/members"),
                             format: params.format,
                         })];
                 case 1:
@@ -63,7 +63,7 @@ api_1.CongressAPI.prototype.getMember = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/members/" + params.memberId,
+                            url: "/members/".concat(params.memberId),
                             format: params.format,
                         })];
                 case 1:
@@ -98,9 +98,9 @@ api_1.CongressAPI.prototype.getMembersForState = function (params) {
             switch (_a.label) {
                 case 0:
                     params = this.withDefaults(params);
-                    url = "/members/" + params.chamber + "/" + params.state + "/current";
+                    url = "/members/".concat(params.chamber, "/").concat(params.state, "/current");
                     if (params.district) {
-                        url = "/members/" + params.chamber + "/" + params.state + "/" + params.district + "/current";
+                        url = "/members/".concat(params.chamber, "/").concat(params.state, "/").concat(params.district, "/current");
                     }
                     return [4 /*yield*/, this.request({ url: url, format: params.format })];
                 case 1:
@@ -118,7 +118,7 @@ api_1.CongressAPI.prototype.getLeavingMembers = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: params.congressNumber + "/" + params.chamber + "/members/leaving",
+                            url: "".concat(params.congressNumber, "/").concat(params.chamber, "/members/leaving"),
                             format: params.format,
                         })];
                 case 1:
@@ -136,7 +136,7 @@ api_1.CongressAPI.prototype.getMemberVotePositions = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/members/" + params.memberId + "/votes",
+                            url: "/members/".concat(params.memberId, "/votes"),
                             format: params.format,
                         })];
                 case 1:
@@ -154,7 +154,7 @@ api_1.CongressAPI.prototype.getMemberVoteComparison = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/members/" + params.firstMemberId + "/votes/" + params.secondMemberId + "/" + params.congressNumber + "/" + params.chamber,
+                            url: "/members/".concat(params.firstMemberId, "/votes/").concat(params.secondMemberId, "/").concat(params.congressNumber, "/").concat(params.chamber),
                             format: params.format,
                         })];
                 case 1:
@@ -172,7 +172,7 @@ api_1.CongressAPI.prototype.getMemberSponsorshipsComparison = function (params) 
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/members/" + params.firstMemberId + "/bills/" + params.secondMemberId + "/" + params.congressNumber + "/" + params.chamber,
+                            url: "/members/".concat(params.firstMemberId, "/bills/").concat(params.secondMemberId, "/").concat(params.congressNumber, "/").concat(params.chamber),
                             format: params.format,
                         })];
                 case 1:
@@ -190,7 +190,7 @@ api_1.CongressAPI.prototype.getCosponsoredBillsForMember = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/members/" + params.memberId + "/bills/" + params.type,
+                            url: "/members/".concat(params.memberId, "/bills/").concat(params.type),
                             format: params.format,
                         })];
                 case 1:
