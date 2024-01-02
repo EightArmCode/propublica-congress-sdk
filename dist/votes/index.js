@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var api_1 = require("../api");
 function getDateString(date) {
-    return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+    return "".concat(date.getFullYear(), "-").concat(date.getMonth() + 1, "-").concat(date.getDate());
 }
 api_1.CongressAPI.prototype.getNominationVotes = function (params) {
     return __awaiter(this, void 0, void 0, function () {
@@ -48,7 +48,7 @@ api_1.CongressAPI.prototype.getNominationVotes = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/" + params.congressNumber + "/nominations",
+                            url: "/".concat(params.congressNumber, "/nominations"),
                             format: params.format,
                         })];
                 case 1:
@@ -66,7 +66,7 @@ api_1.CongressAPI.prototype.getRecentVotes = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/" + params.chamber + "/votes/recent",
+                            url: "/".concat(params.chamber, "/votes/recent"),
                             format: params.format,
                         })];
                 case 1:
@@ -85,7 +85,7 @@ api_1.CongressAPI.prototype.getRollCallVote = function (params) {
                     params = this.withDefaults(params);
                     sessionNumber = params.sessionNumber || new Date().getUTCFullYear() % 2 ? 2 : 1;
                     return [4 /*yield*/, this.request({
-                            url: "/" + params.congressNumber + "/" + params.chamber + "/sessions/" + sessionNumber + "/votes/" + params.number,
+                            url: "/".concat(params.congressNumber, "/").concat(params.chamber, "/sessions/").concat(sessionNumber, "/votes/").concat(params.number),
                             format: params.format,
                         })];
                 case 1:
@@ -105,7 +105,7 @@ api_1.CongressAPI.prototype.getVotesForDateRange = function (params) {
                     startString = getDateString(params.startDate);
                     endString = getDateString(params.endDate);
                     return [4 /*yield*/, this.request({
-                            url: "/" + params.chamber + "/votes/" + startString + "/" + endString,
+                            url: "/".concat(params.chamber, "/votes/").concat(startString, "/").concat(endString),
                             format: params.format,
                         })];
                 case 1:
@@ -124,7 +124,7 @@ api_1.CongressAPI.prototype.getVotesForDate = function (params) {
                     params = this.withDefaults(params);
                     dateString = getDateString(params.date);
                     return [4 /*yield*/, this.request({
-                            url: "/" + params.chamber + "/votes/" + dateString + "/" + dateString,
+                            url: "/".concat(params.chamber, "/votes/").concat(dateString, "/").concat(dateString),
                             format: params.format,
                         })];
                 case 1:
@@ -142,7 +142,7 @@ api_1.CongressAPI.prototype.getVotesForType = function (params) {
                 case 0:
                     params = this.withDefaults(params);
                     return [4 /*yield*/, this.request({
-                            url: "/" + params.congressNumber + "/" + params.chamber + "/votes/" + params.type,
+                            url: "/".concat(params.congressNumber, "/").concat(params.chamber, "/votes/").concat(params.type),
                             format: params.format,
                         })];
                 case 1:

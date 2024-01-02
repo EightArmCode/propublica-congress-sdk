@@ -1,6 +1,6 @@
-export declare type CapitalizedChamber = 'House' | 'Senate';
-export declare type Chamber = 'house' | 'senate';
-export declare type URLString = string;
+export type CapitalizedChamber = 'House' | 'Senate';
+export type Chamber = 'house' | 'senate';
+export type URLString = string;
 export interface BaseApiResult {
     status: string;
     copyright: string;
@@ -10,6 +10,7 @@ export interface BasePagedResult {
     chamber: CapitalizedChamber;
     num_results: number;
     offset: number;
+    congress: string;
 }
 export interface BaseRequestParams {
     format?: 'json' | 'xml';

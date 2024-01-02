@@ -28,16 +28,16 @@ var CongressAPI = /** @class */ (function () {
     }
     CongressAPI.prototype.getApi = function () {
         return axios_1.default.create({
-            baseURL: "https://api.propublica.org/congress/" + this.apiVersion,
+            baseURL: "https://api.propublica.org/congress/".concat(this.apiVersion),
             headers: { 'X-API-Key': this.apiKey },
         });
     };
     CongressAPI.prototype.request = function (requestParams) {
         var url = requestParams.url;
         if (requestParams.offset) {
-            url += "?offset=" + requestParams.offset;
+            url += "?offset=".concat(requestParams.offset);
         }
-        return this.client.get(url + "." + requestParams.format);
+        return this.client.get("".concat(url, ".").concat(requestParams.format));
     };
     Object.defineProperty(CongressAPI.prototype, "congressNumber", {
         get: function () {

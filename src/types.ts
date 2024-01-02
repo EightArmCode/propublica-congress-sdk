@@ -13,6 +13,7 @@ export interface BasePagedResult {
   chamber: CapitalizedChamber;
   num_results: number;
   offset: number;
+  congress: string
 }
 
 export interface BaseRequestParams {

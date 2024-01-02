@@ -1,6 +1,6 @@
 import { BaseApiResult, BasePagedResult, CapitalizedChamber, URLString } from '../types';
 import { MemberId } from '../members/types';
-declare type CommitteeId = string;
+type CommitteeId = string;
 interface BaseCommittee {
     id: CommitteeId;
     name: string;
